@@ -10,7 +10,7 @@ public class Main {
             }
         }
 
-        System.out.println(maxi); //1
+        System.out.println(maxi); //1.
 
     }
 }
