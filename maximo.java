@@ -1,4 +1,4 @@
-public class Main {
+public class maximo {
     public static void main(String[] args) {
 
         int[] array = {1,43,12,44,60,65}; //1
