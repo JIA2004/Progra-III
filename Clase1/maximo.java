@@ -10,7 +10,7 @@ public class maximo {
             }
         }
 
-        System.out.println(maxi); //1
+        System.out.println("El máximo valor del array es el: "+maxi); //1
 
     }
 }

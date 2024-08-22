@@ -3,8 +3,6 @@ public class facturación {
         
         int[][] facturas = {{123,53,4500},{124,47,5800},{125,67,7400},{126,87,3200}};
 
-        Cliente[] clientes = ;
-
     }
 
     public class Cliente {
