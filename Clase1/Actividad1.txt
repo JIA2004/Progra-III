@@ -1,0 +1,15 @@
+1 + 1 + 1 + n + n + n + 1 = 4+3n
+
+demostrar que f(n) pertenece a O(n):
+4 + 3n <= Cn
+4/n + 3n/n <= Cn/n
+4/n + 3 <= C
+
+elegimos n = 2
+elgimos C = 6
+
+4/2 + 3 <= 6
+2 + 3 <= 6
+5 <= 6
+
+cuando n = 2  y C = 6  , f(n) pertenece a O(n)
