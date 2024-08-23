@@ -16,3 +16,12 @@ public class actividad3 {
     
 }
 
+    //recurrencia
+    //T(n)= T(n-1)+O(1) 
+    //T(n)= (T(n-2)+O(1))+O(1)
+    //T(n)= T(n-2)+2*O(1) 
+    //T(n)= (T(n-3)+O(1))+2*O(1)
+    //T(n)= T(n-3)+3*O(1)
+    
+    //T(n)= T(0)+n*O(1)
+
