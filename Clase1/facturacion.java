@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class actividad1b {
+public class facturacion {
     public static void main(String[] args) {
         int[][] listacomprobante={{54,36,3400},{55,12,4300},{56,25,2500}};
         Cliente numero1=new Cliente(36, "Lucas");
