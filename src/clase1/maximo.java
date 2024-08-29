@@ -1,3 +1,5 @@
+package clase1;
+
 public class maximo {
     public static void main(String[] args) {
 

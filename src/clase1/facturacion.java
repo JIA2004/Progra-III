@@ -1,3 +1,5 @@
+package clase1;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,6 +70,6 @@ class Resumen {
 
     @Override
     public String toString() {
-        return "Resumen= codigoCliente= " + codigoCliente + ", nombreCliente= " + nombreCliente + ", totalImportes= " + totalImportes;
+        return "clase1.Resumen= codigoCliente= " + codigoCliente + ", nombreCliente= " + nombreCliente + ", totalImportes= " + totalImportes;
     }
 }

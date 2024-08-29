@@ -1,3 +1,5 @@
+package clase1;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -82,6 +84,6 @@ class Resultado {
 
     @Override
     public String toString() {
-        return "Resultado: idCliente=" + idCliente + ", nombreCliente=" + nombreCliente + ", sumaImportes=" + sumaImportes;
+        return "clase1.Resultado: idCliente=" + idCliente + ", nombreCliente=" + nombreCliente + ", sumaImportes=" + sumaImportes;
     }
 }

@@ -1,3 +1,5 @@
+package clase1;
+
 import java.math.BigInteger;
 
 public class actividad2 {
