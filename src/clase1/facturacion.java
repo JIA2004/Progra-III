@@ -29,31 +29,13 @@ public class facturacion {
             for(int[] documento : documentos){
                 int codigoCliente = documento[1];
                 double importe = documento[2];
-                if (codigoCliente == cliente.obtenerId()) {
+                if (codigoCliente == cliente.getId()) {
                     totalImportes += importe;
                 }
             }
-            resumenes.add(new Resumen(cliente.obtenerId(), cliente.obtenerNombre(), totalImportes));
+            resumenes.add(new Resumen(cliente.getId(), cliente.getNombre(), totalImportes));
         }
         return resumenes;
-    }
-}
-
-class Cliente {
-    int codigo;
-    String nombre;
-
-    public Cliente(int codigo, String nombre) {
-        this.codigo = codigo;
-        this.nombre = nombre;
-    }
-
-    public int obtenerId() {
-        return codigo;
-    }
-
-    public String obtenerNombre() {
-        return nombre;
     }
 }
 
