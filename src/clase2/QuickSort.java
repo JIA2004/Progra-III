@@ -38,4 +38,26 @@ public class QuickSort {
         return i + 1; // Retorna el índice de la partición
     }
 
+    public static void imprimirArreglo(int[] arreglo) {
+        for (int i : arreglo) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        
+        int[] arreglo = {34, 7, 23, 32, 5, 62};
+
+        System.out.println("Arreglo original:");
+        imprimirArreglo(arreglo);
+
+        // Llamada al método quickSort
+        quickSort(arreglo, 0, arreglo.length - 1);
+
+        System.out.println("Arreglo ordenado:");
+        imprimirArreglo(arreglo);
+
+    }
+
 }
