@@ -1,0 +1,24 @@
+ALGORITMO BuscarCliente(listaClientes, inicio, fin)
+    SI inicio == fin ENTONCES
+        Retornar listaClientes[inicio]
+    FIN SI
+
+    Definir medio como (inicio + fin) / 2
+
+    Definir clienteMaxIzquierda como el resultado de BuscarCliente(listaClientes, inicio, medio)
+    Definir clienteMaxDerecha como el resultado de BuscarCliente(listaClientes, medio + 1, fin)
+
+    SI clienteMaxIzquierda.scoring > clienteMaxDerecha.scoring ENTONCES
+        Retornar clienteMaxIzquierda
+    SINO
+        Retornar clienteMaxDerecha
+    FIN SI
+FIN ALGORITMO
+
+ALGORITMO Principal
+    Definir listaClientes como [        Cliente(1, "Ana", 80),        Cliente(2, "Luis", 90),        Cliente(3, "Carlos", 70),        Cliente(4, "María", 85),        Cliente(5, "José", 60)    ]
+
+    Definir clienteMax como el resultado de BuscarCliente(listaClientes, 0, longitud(listaClientes) - 1)
+
+    Imprimir "Cliente con el mayor scoring: " + clienteMax.nombre + " con scoring " + clienteMax.scoring
+FIN ALGORITMO

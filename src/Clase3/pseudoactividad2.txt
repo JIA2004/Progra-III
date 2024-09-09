@@ -1,0 +1,30 @@
+ALGORITMO BuscarMayores(listaNumeros, inicio, fin)
+    Definir listaMayores como un arreglo de tamaño 2
+
+    SI inicio == fin ENTONCES
+        listaMayores[0] = listaNumeros[inicio]
+        listaMayores[1] = -∞
+        Retornar listaMayores
+
+    Definir medio como (inicio + fin) / 2
+
+    Definir numeroMaxIzq como el resultado de BuscarMayores(listaNumeros, inicio, medio)
+    Definir numeroMaxDer como el resultado de BuscarMayores(listaNumeros, medio + 1, fin)
+
+    SI numeroMaxIzq[0] > numeroMaxDer[0] ENTONCES
+        listaMayores[0] = numeroMaxIzq[0]
+        listaMayores[1] = el mayor entre numeroMaxIzq[1] y numeroMaxDer[0]
+    SINO
+        listaMayores[0] = numeroMaxDer[0]
+        listaMayores[1] = el mayor entre numeroMaxIzq[0] y numeroMaxDer[1]
+
+    Retornar listaMayores
+FIN ALGORITMO
+
+ALGORITMO Principal
+    Definir listaNum como [23, 43, 25, 56, 34, 67]
+    Definir mayores como el resultado de BuscarMayores(listaNum, 0, longitud(listaNum) - 1)
+
+    PARA cada índice i desde 0 hasta longitud(mayores) - 1 HACER
+        Imprimir "El (i+1)° número mayor de la lista es: " + mayores[i]
+FIN ALGORITMO
