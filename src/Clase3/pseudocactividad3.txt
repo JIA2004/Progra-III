@@ -1,1 +1,36 @@
+función buscarDosClientes(listaClientes, inicio, fin)
+    crear arreglo clientesMaximos de tamaño 2
+
+    si inicio es igual a fin
+        poner listaClientes[inicio] en clientesMaximos[0]
+        crear cliente ficticio y ponerlo en clientesMaximos[1]
+        retornar clientesMaximos
+
+    medio = (inicio + fin) / 2
+
+    maxIzq = llamar a buscarDosClientes con la mitad izquierda
+    maxDer = llamar a buscarDosClientes con la mitad derecha
+
+    si el scoring de maxIzq[0] es mayor que el de maxDer[0]
+        poner maxIzq[0] en clientesMaximos[0]
+        si el scoring de maxIzq[1] es mayor que el de maxDer[0]
+            poner maxIzq[1] en clientesMaximos[1]
+        sino
+            poner maxDer[0] en clientesMaximos[1]
+    sino
+        poner maxDer[0] en clientesMaximos[0]
+        si el scoring de maxIzq[0] es mayor que el de maxDer[1]
+            poner maxIzq[0] en clientesMaximos[1]
+        sino
+            poner maxDer[1] en clientesMaximos[1]
+
+    retornar clientesMaximos
+fin función
+
+función main
+    crear arreglo de clientes con varios clientes
+    llamar a buscarDosClientes con toda la lista
+    imprimir el nombre y scoring del cliente con mayor scoring
+    imprimir el nombre y scoring del segundo cliente con mayor scoring
+fin función
 
