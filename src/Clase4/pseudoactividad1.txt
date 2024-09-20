@@ -1,0 +1,24 @@
+INICIO
+
+FUNCIÓN encontrarMinimoMonedas(lista_monedas, monto)
+    ORDENAR lista_monedas de menor a mayor
+    CREAR lista resultado vacía
+    
+    PARA i desde la última moneda (mayor valor) hasta la primera (menor valor)
+        MIENTRAS monto sea mayor o igual a lista_monedas[i]
+            RESTAR lista_monedas[i] al monto
+            AGREGAR lista_monedas[i] a la lista resultado
+        FIN MIENTRAS
+    FIN PARA
+    
+    RETORNAR lista resultado
+FIN FUNCIÓN
+
+FUNCIÓN principal
+    DEFINIR lista_monedas como [1, 5, 10, 25]
+    DEFINIR monto como 36
+    LLAMAR a encontrarMinimoMonedas con lista_monedas y monto
+    IMPRIMIR las monedas utilizadas
+FIN FUNCIÓN
+
+FIN
