@@ -1,0 +1,32 @@
+INICIO
+
+DEFINIR M como 1
+DEFINIR C como 100
+DEFINIR B como 1000
+DEFINIR cantM como 0
+DEFINIR cantC como 0
+DEFINIR cantB como 0
+DEFINIR comprademoneda como 7583
+
+MIENTRAS comprademoneda sea diferente de 0
+    MIENTRAS comprademoneda sea mayor o igual a B
+        RESTAR B a comprademoneda
+        INCREMENTAR cantB en 1
+    FIN MIENTRAS
+    
+    MIENTRAS comprademoneda sea mayor o igual a C
+        RESTAR C a comprademoneda
+        INCREMENTAR cantC en 1
+    FIN MIENTRAS
+    
+    MIENTRAS comprademoneda sea mayor o igual a M
+        RESTAR M a comprademoneda
+        INCREMENTAR cantM en 1
+    FIN MIENTRAS
+FIN MIENTRAS
+
+IMPRIMIR "Cantidad de Bonos: " + cantB
+IMPRIMIR "Cantidad de Cheques: " + cantC
+IMPRIMIR "Cantidad de Monedas: " + cantM
+
+FIN
