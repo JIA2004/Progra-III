@@ -1,4 +1,4 @@
-package clase5;
+package clase5.Actividad1;
 
 
 public interface interfaz {

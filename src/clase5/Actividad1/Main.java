@@ -1,4 +1,4 @@
-package clase5;
+package clase5.Actividad1;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,10 +25,6 @@ public class Main {
         IDseguido.dejarDeSeguir(2);
         System.out.println("elimina usuario 2:");
         imprimirusuarios(IDseguido.getusuarios());
-
-        // Verificar el valor después de eliminar
-        System.out.println("Valores de la usuario 2 después de eliminar: " + java.util.Arrays.toString(IDseguido.getValor(2)));
-
         
     }
 
