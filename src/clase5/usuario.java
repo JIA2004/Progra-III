@@ -2,18 +2,32 @@ package clase5;
 
 public class usuario {
 
-    public String nombreUsuario;
-    protected String contraseña;
-    public String mail;
-    public usuario seguidor;
+    private String nombre;
+    private usuario[] siguiendo;
+    public int i = 1;
 
-    public usuario(String nombreUsuario, String contraseña, String mail, usuario seguidor) {
+    public usuario(String nombre) {
+        this.nombre = nombre;
+        this.siguiendo = new usuario[10];
+    }
 
-        this.nombreUsuario = nombreUsuario;
-        this.contraseña = contraseña;
-        this.mail = mail;
-        this.seguidor = seguidor;
+    public String getNombre() {
+        return nombre;
+    }
 
+    public usuario[] getSiguiendo() {
+        return siguiendo;
+    }
+
+    public void seguir(usuario usuario) {
+        for (usuario persona : siguiendo) {
+            if (persona == usuario){
+                System.out.println("Ya seguís a este usuario");
+                return;
+            }
+        }
+        siguiendo[i] = usuario;
+        i++;
     }
 
 }
