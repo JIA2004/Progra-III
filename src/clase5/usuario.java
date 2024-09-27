@@ -1,5 +1,7 @@
 package clase5;
 
+import java.util.Arrays;
+
 public class usuario {
 
     private String nombre;
@@ -15,8 +17,15 @@ public class usuario {
         return nombre;
     }
 
-    public usuario[] getSiguiendo() {
-        return siguiendo;
+    public void getSiguiendo() {
+        for (usuario persona : siguiendo) {
+            if (persona != null){
+                System.out.println(persona.nombre);
+            }
+            else {
+                System.out.println(persona,"no existe");
+            }
+        }
     }
 
     public void seguir(usuario usuario) {
@@ -28,6 +37,15 @@ public class usuario {
         }
         siguiendo[i] = usuario;
         i++;
+        if (i == siguiendo.length - 1) {
+            int nuevoTamaño = siguiendo.length + 10;
+            usuario[] nuevaLista = Arrays.copyOf(siguiendo, nuevoTamaño);
+            siguiendo = nuevaLista;
+            return;
+        }
+        else {
+            return;
+        }
     }
 
 }
