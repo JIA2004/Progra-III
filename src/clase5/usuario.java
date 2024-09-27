@@ -3,49 +3,28 @@ package clase5;
 import java.util.Arrays;
 
 public class usuario {
+    int usuario;
+    int[] valores;
+    int valoresSize;
+    usuario siguiente;
 
-    private String nombre;
-    private usuario[] siguiendo;
-    public int i = 1;
-
-    public usuario(String nombre) {
-        this.nombre = nombre;
-        this.siguiendo = new usuario[10];
+    usuario(int usuario, int valorInicial) {
+        this.usuario = usuario;
+        this.valores = new int[1];
+        this.valores[0] = valorInicial;
+        this.valoresSize = 1;
+        this.siguiente = null;
     }
 
-    public String getNombre() {
-        return nombre;
+    void seguirValor(int valor) {
+        if (this.valoresSize == this.valores.length) {
+            this.valores = Arrays.copyOf(this.valores, this.valoresSize * 2);
+        }
+
+        this.valores[this.valoresSize++] = valor;
     }
 
-    public void getSiguiendo() {
-        for (usuario persona : siguiendo) {
-            if (persona != null){
-                System.out.println(persona.nombre);
-            }
-            else {
-                System.out.println(persona,"no existe");
-            }
-        }
+    int[] obtenerValores() {
+        return Arrays.copyOf(this.valores, this.valoresSize);
     }
-
-    public void seguir(usuario usuario) {
-        for (usuario persona : siguiendo) {
-            if (persona == usuario){
-                System.out.println("Ya seguís a este usuario");
-                return;
-            }
-        }
-        siguiendo[i] = usuario;
-        i++;
-        if (i == siguiendo.length - 1) {
-            int nuevoTamaño = siguiendo.length + 10;
-            usuario[] nuevaLista = Arrays.copyOf(siguiendo, nuevoTamaño);
-            siguiendo = nuevaLista;
-            return;
-        }
-        else {
-            return;
-        }
-    }
-
 }

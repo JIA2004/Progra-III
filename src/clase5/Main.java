@@ -2,31 +2,39 @@ package clase5;
 
 public class Main {
     public static void main(String[] args) {
-        // Crear un grafo con una capacidad para 10 usuarios
-        grafo redSocial = new grafo(10);
-        usuario juani = new usuario("juani");
-        usuario pedro = new usuario("pedro");
-        usuario fausti = new usuario("fausti");
-        usuario bauti = new usuario("bauti");
-        usuario ramiro = new usuario("ramiro");
 
+        grafo IDseguido = new grafo();
 
-        // Agregar usuarios a la red social
-        redSocial.agregarUsuario("Juani");
-        redSocial.agregarUsuario("Pedro");
-        redSocial.agregarUsuario("Laura");
-        redSocial.agregarUsuario("Ana");
+        // seguir elementos al IDseguido
+        IDseguido.seguir(1, 100);
+        IDseguido.seguir(1, 101);
+        IDseguido.seguir(2, 200);
+        IDseguido.seguir(3, 300);
+        IDseguido.seguir(3, 301);
 
-        // Definir relaciones de seguidores
-        juani.seguir(pedro);
-        pedro.seguir(fausti);
-        pedro.seguir(ramiro);
-        fausti.seguir(juani);
+        // Mostrar los elementos agregados
+        System.out.println("usuarios después de seguir elementos:");
+        imprimirusuarios(IDseguido.getusuarios());
 
-        juani.getSiguiendo();
-        pedro.getSiguiendo();
-        fausti.getSiguiendo();
-        ramiro.getSiguiendo();
+        // Obtener valores
+        System.out.println("seguidos del usuario 1: " + java.util.Arrays.toString(IDseguido.getValor(1)));
+        System.out.println("seguidos del usuario 2" + java.util.Arrays.toString(IDseguido.getValor(2)));
+        
 
+        // Eliminar un usuario
+        IDseguido.dejarDeSeguir(2);
+        System.out.println("elimina usuario 2:");
+        imprimirusuarios(IDseguido.getusuarios());
+
+        // Verificar el valor después de eliminar
+        System.out.println("Valores de la usuario 2 después de eliminar: " + java.util.Arrays.toString(IDseguido.getValor(2)));
+
+        
+    }
+
+    private static void imprimirusuarios(int[] usuarios) {
+        for (int usuario : usuarios) {
+            System.out.println("usuario: " + usuario);
+        }
     }
 }

@@ -1,30 +1,90 @@
 package clase5;
 
-public class grafo {
-    private usuario[] usuarios;  // Arreglo para almacenar usuarios en la red
-    private int numUsuarios;     // Cantidad actual de usuarios
 
-    public grafo(int capacidad) {
-        usuarios = new usuario[capacidad]; // Tamaño inicial del grafo (número máximo de usuarios)
-        numUsuarios = 0;
+import java.util.Arrays;
+
+public class grafo implements interfaz {
+
+    private usuario cabeza;
+
+    public grafo() {
+        this.cabeza = null;
     }
 
-    // Agregar un nuevo usuario a la red social
-    public void agregarUsuario(String nombre) {
-        if (numUsuarios < usuarios.length) {
-            usuarios[numUsuarios++] = new usuario(nombre);
-        } else {
-            System.out.println("Capacidad máxima de usuarios alcanzada.");
-        }
-    }
-
-    // Buscar un usuario por nombre
-    public usuario buscarUsuario(String nombre) {
-        for (int i = 0; i < numUsuarios; i++) {
-            if (usuarios[i].getNombre().equals(nombre)) {
-                return usuarios[i];
+    @Override
+    public void seguir(int usuario, int valor) {
+        usuario actual = cabeza;
+        while (actual != null) {
+            if (actual.usuario == usuario) {
+                actual.seguirValor(valor);
+                return;
             }
+            actual = actual.siguiente;
         }
-        return null;
+        usuario nuevoNodo = new usuario(usuario, valor);
+        nuevoNodo.siguiente = cabeza;
+        cabeza = nuevoNodo;
     }
+
+    @Override
+    public void dejarDeSeguir(int usuario) {
+        if (cabeza == null) {
+            return;
+        }
+
+        if (cabeza.usuario == usuario) {
+            cabeza = cabeza.siguiente;
+            return;
+        }
+
+        usuario actual = cabeza;
+        while (actual.siguiente != null) {
+            if (actual.siguiente.usuario == usuario) {
+                actual.siguiente = actual.siguiente.siguiente;
+                return;
+            }
+            actual = actual.siguiente;
+        }
+    }
+
+    @Override
+    public int[] getusuarios() {
+        int tamaño = obtenerTamaño();
+        int[] usuarios = new int[tamaño];
+        usuario actual = cabeza;
+        int index = 0;
+        while (actual != null) {
+            usuarios[index++] = actual.usuario;
+            actual = actual.siguiente;
+        }
+        return usuarios;
+    }
+
+    @Override
+    public int[] getValor(int usuario) {
+        usuario actual = cabeza;
+        while (actual != null) {
+            if (actual.usuario == usuario) {
+                return actual.obtenerValores();
+            }
+            actual = actual.siguiente;
+        }
+        return new int[0]; // Devolver un arreglo vacío si la usuario no existe
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return cabeza == null;
+    }
+
+    private int obtenerTamaño() {
+        int tamaño = 0;
+        usuario actual = cabeza;
+        while (actual != null) {
+            tamaño++;
+            actual = actual.siguiente;
+        }
+        return tamaño;
+    }
+
 }
