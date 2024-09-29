@@ -1,4 +1,4 @@
-package Clase5.Actividad2;
+package clase5.Actividad2;
 
 public class GrafoMatriz {
 

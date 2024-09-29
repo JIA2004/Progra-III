@@ -1,4 +1,4 @@
-package Clase5.Actividad4;
+package clase5.Actividad4;
 
 public class Grafo {
     int numVertices;

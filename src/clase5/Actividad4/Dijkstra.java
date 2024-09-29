@@ -1,8 +1,8 @@
-package Clase5.Actividad4;
+package clase5.Actividad4;
 
 import java.util.Arrays;
-import java.util.PriorityQueue;
 import java.util.Comparator;
+import java.util.PriorityQueue;
 
 public class Dijkstra {
 

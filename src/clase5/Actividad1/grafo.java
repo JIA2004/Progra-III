@@ -1,7 +1,4 @@
-package Clase5.Actividad1;
-
-
-import java.util.Arrays;
+package clase5.Actividad1;
 
 public class grafo implements interfaz {
 
