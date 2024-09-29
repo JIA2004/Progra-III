@@ -14,7 +14,7 @@ grafo.agregarArista(2, 4, 3);   // solo de 2 a 4
 grafo.agregarArista(3, 4, 4);   // solo de 3 a 4
 
         
-        int[] distancias = Dijkstra.dijkstra(grafo, 0);
+        int[] distancias = Dijkstra.dijkstra(grafo, 0); 
 
         
         for (int i = 1; i < distancias.length; i++) {
