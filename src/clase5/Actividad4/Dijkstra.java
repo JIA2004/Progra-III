@@ -1,4 +1,4 @@
-package clase5.Actividad4;
+package Clase5.Actividad4;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;
@@ -11,7 +11,7 @@ public class Dijkstra {
         int[] dist = new int[numVertices]; // Array de distancias mínimas
         boolean[] procesado = new boolean[numVertices]; // Array que marca los vertices ya procesados
         int[] prev = new int[numVertices]; 
-       
+        
         // Inicializamos todas las distancias a infinito y marcamos todos los vértices como no procesados
         Arrays.fill(dist, Integer.MAX_VALUE);
         Arrays.fill(prev, -1);

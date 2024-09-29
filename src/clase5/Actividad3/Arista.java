@@ -1,3 +1,4 @@
+package Clase5.Actividad3;
 class Arista {
     Estacion destino;
     int costo;
