@@ -1,4 +1,4 @@
-package clase5.Actividad1;
+package Clase5.Actividad1;
 
 public class grafo implements interfaz {
 
