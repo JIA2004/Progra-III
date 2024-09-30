@@ -1,4 +1,4 @@
-package Clase7;
+package Clase7.actividad1;
 
 public class FloydWarshall {
     final static int INF = 99999;  // Usamos un valor grande para representar el infinito
