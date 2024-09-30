@@ -1,4 +1,4 @@
-package clase5.Actividad4;
+package Clase5.Actividad4;
 
 import java.util.Arrays;
 import java.util.Comparator;

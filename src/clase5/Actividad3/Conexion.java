@@ -1,4 +1,4 @@
-package clase5.Actividad3;
+package Clase5.Actividad3;
 class Conexion {
     Estacion estacion1;
     Estacion estacion2;
